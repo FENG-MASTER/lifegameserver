@@ -1,0 +1,18 @@
+package com.fengmaster.lifegameserver.service.impl;
+
+import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fengmaster.lifegameserver.dao.LgTriggerDao;
+import com.fengmaster.lifegameserver.model.po.LgTrigger;
+import com.fengmaster.lifegameserver.service.LgTriggerService;
+import org.springframework.stereotype.Service;
+
+/**
+ * 触发器(LgTrigger)表服务实现类
+ *
+ * @author makejava
+ * @since 2020-08-31 10:44:32
+ */
+@Service("lgTriggerService")
+public class LgTriggerServiceImpl extends ServiceImpl<LgTriggerDao, LgTrigger> implements LgTriggerService {
+
+}
