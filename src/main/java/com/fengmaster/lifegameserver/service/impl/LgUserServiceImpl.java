@@ -7,6 +7,10 @@ import com.fengmaster.lifegameserver.dao.LgUserDao;
 import com.fengmaster.lifegameserver.model.po.LgUser;
 import com.fengmaster.lifegameserver.service.LgUserService;
 import org.springframework.stereotype.Service;
+import org.springframework.validation.annotation.Validated;
+
+import javax.validation.Valid;
+import javax.validation.constraints.NotNull;
 
 /**
  * 玩家(LgUser)表服务实现类
@@ -15,6 +19,7 @@ import org.springframework.stereotype.Service;
  * @since 2020-08-31 10:44:35
  */
 @Service("lgUserService")
+@Validated
 public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements LgUserService {
 
 
@@ -23,7 +28,7 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
      * @return
      */
     @Override
-    public boolean register(LgUser lgUser){
+    public boolean register(@Valid LgUser lgUser){
         //生成UUID
         lgUser.setUuid(UUID.randomUUID().toString(true));
         //sha256加密密码

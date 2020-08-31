@@ -3,6 +3,8 @@ package com.fengmaster.lifegameserver.service;
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.fengmaster.lifegameserver.model.po.LgUser;
 
+import javax.validation.Valid;
+
 /**
  * 玩家(LgUser)表服务接口
  *
@@ -11,6 +13,6 @@ import com.fengmaster.lifegameserver.model.po.LgUser;
  */
 public interface LgUserService extends IService<LgUser> {
 
-    public boolean register(LgUser lgUser);
+    public boolean register(@Valid LgUser lgUser);
 
 }

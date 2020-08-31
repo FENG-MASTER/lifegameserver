@@ -9,9 +9,12 @@ import com.fengmaster.lifegameserver.model.po.LgUser;
 import com.fengmaster.lifegameserver.service.LgUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.validation.BindingResult;
+import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
+import javax.validation.ValidationException;
 import java.io.Serializable;
 import java.util.List;
 
