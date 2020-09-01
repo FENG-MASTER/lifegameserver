@@ -8,6 +8,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fengmaster.lifegameserver.model.po.LgUser;
 import com.fengmaster.lifegameserver.service.LgUserService;
 import io.swagger.v3.oas.annotations.Operation;
+import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
@@ -34,28 +35,6 @@ public class UserController extends ApiController {
     @Resource
     private LgUserService lgUserService;
 
-    /**
-     * 分页查询所有数据
-     *
-     * @param page   分页对象
-     * @param lgUser 查询实体
-     * @return 所有数据
-     */
-    @GetMapping
-    public R selectAll(Page<LgUser> page, LgUser lgUser) {
-        return success(this.lgUserService.page(page, new QueryWrapper<>(lgUser)));
-    }
-
-    /**
-     * 通过主键查询单条数据
-     *
-     * @param id 主键
-     * @return 单条数据
-     */
-    @GetMapping("{id}")
-    public R selectOne(@PathVariable Serializable id) {
-        return success(this.lgUserService.getById(id));
-    }
 
     /**
      * 新增数据
@@ -80,6 +59,39 @@ public class UserController extends ApiController {
     public R update(@RequestBody LgUser lgUser) {
         return success(this.lgUserService.updateById(lgUser));
     }
+
+    @Operation(summary = "登录",description = "登录")
+    @PostMapping("/login")
+    public R login(@Parameter(description = "用户名") @RequestParam String userName,
+                   @Parameter(description = "密码") @RequestParam String password){
+        lgUserService.login(userName,password);
+        return success(true);
+    }
+
+    /**
+     * 分页查询所有数据
+     *
+     * @param page   分页对象
+     * @param lgUser 查询实体
+     * @return 所有数据
+     */
+    @GetMapping
+    public R selectAll(Page<LgUser> page, LgUser lgUser) {
+        return success(this.lgUserService.page(page, new QueryWrapper<>(lgUser)));
+    }
+
+    /**
+     * 通过主键查询单条数据
+     *
+     * @param id 主键
+     * @return 单条数据
+     */
+    @GetMapping("{id}")
+    public R selectOne(@PathVariable Serializable id) {
+        return success(this.lgUserService.getById(id));
+    }
+
+
 
     /**
      * 删除数据

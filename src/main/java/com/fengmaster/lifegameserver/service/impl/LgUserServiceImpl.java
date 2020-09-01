@@ -2,10 +2,16 @@ package com.fengmaster.lifegameserver.service.impl;
 
 import cn.hutool.core.lang.UUID;
 import cn.hutool.crypto.SecureUtil;
+import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.dao.LgUserDao;
 import com.fengmaster.lifegameserver.model.po.LgUser;
 import com.fengmaster.lifegameserver.service.LgUserService;
+import org.apache.shiro.SecurityUtils;
+import org.apache.shiro.authc.AuthenticationException;
+import org.apache.shiro.authc.UsernamePasswordToken;
+import org.apache.shiro.authz.AuthorizationException;
+import org.apache.shiro.subject.Subject;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -34,6 +40,26 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
         //sha256加密密码
         lgUser.setPassword(SecureUtil.sha256(lgUser.getPassword()));
         return save(lgUser);
+    }
+
+    @Override
+    public void login(String userName, String password) {
+        //添加用户认证信息
+        Subject subject = SecurityUtils.getSubject();
+        UsernamePasswordToken usernamePasswordToken = new UsernamePasswordToken(userName, SecureUtil.sha256(password));
+        try {
+            //进行验证，这里可以捕获异常，然后返回对应信息
+            subject.login(usernamePasswordToken);
+        } catch (AuthenticationException e) {
+            e.printStackTrace();
+        } catch (AuthorizationException e) {
+            e.printStackTrace();
+        }
+    }
+
+    @Override
+    public LgUser getUserByUserName(String userName) {
+        return getOne(new QueryWrapper<>(new LgUser().setName(userName)));
     }
 
 

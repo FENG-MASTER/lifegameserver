@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import io.swagger.v3.oas.annotations.media.Schema;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import javax.validation.constraints.NotBlank;
 import javax.validation.constraints.NotNull;
@@ -18,6 +19,7 @@ import java.io.Serializable;
 @SuppressWarnings("serial")
 @Data
 @TableName("LG_USER")
+@Accessors(chain  = true)
 public class LgUser extends Model<LgUser> {
 
     /**
@@ -28,8 +30,8 @@ public class LgUser extends Model<LgUser> {
         /**
          * 男
          */
-        MALE("M","男性"),
-        FEMALE("F","女性");
+        M("M","男性"),
+        F("F","女性");
 
         String value;
         String desc;

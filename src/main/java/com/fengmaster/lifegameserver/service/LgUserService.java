@@ -15,4 +15,18 @@ public interface LgUserService extends IService<LgUser> {
 
     public boolean register(@Valid LgUser lgUser);
 
+    /**
+     * 登录
+     * @param userName
+     * @param password
+     */
+    public void login(String userName,String password);
+
+    /**
+     * 根据登录名获取用户信息
+     * @param userName
+     * @return
+     */
+    public LgUser getUserByUserName(String userName);
+
 }
