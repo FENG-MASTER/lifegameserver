@@ -1,6 +1,7 @@
 package com.fengmaster.lifegameserver.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
+import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
 import com.fengmaster.lifegameserver.model.po.LgCharacter;
 
 /**
@@ -10,5 +11,11 @@ import com.fengmaster.lifegameserver.model.po.LgCharacter;
  * @since 2020-08-31 10:44:22
  */
 public interface LgCharacterService extends IService<LgCharacter> {
+
+    /**
+     * 创建新的角色
+     * @param createCharacterDto
+     */
+    public void createCharacter(CreateCharacterDto createCharacterDto);
 
 }

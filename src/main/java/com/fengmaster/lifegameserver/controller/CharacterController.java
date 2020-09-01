@@ -5,45 +5,42 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fengmaster.lifegameserver.model.po.LgUser;
-import com.fengmaster.lifegameserver.service.LgUserService;
-import io.swagger.v3.oas.annotations.Operation;
+import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
+import com.fengmaster.lifegameserver.model.po.LgCharacter;
+import com.fengmaster.lifegameserver.service.LgCharacterService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.springframework.validation.BindingResult;
-import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
-import javax.validation.ValidationException;
 import java.io.Serializable;
 import java.util.List;
 
 /**
- * 玩家(LgUser)表控制层
+ * 玩家(LgCharacter)表控制层
  *
  * @author makejava
- * @since 2020-08-31 11:04:08
+ * @since 2020-09-01 15:51:39
  */
-@Tag(name = "玩家接口")
+@Tag(name = "玩家角色接口")
 @RestController
-@RequestMapping("player")
-public class LgUserController extends ApiController {
+@RequestMapping("character")
+public class CharacterController extends ApiController {
     /**
      * 服务对象
      */
     @Resource
-    private LgUserService lgUserService;
+    private LgCharacterService lgCharacterService;
 
     /**
      * 分页查询所有数据
      *
-     * @param page   分页对象
-     * @param lgUser 查询实体
+     * @param page        分页对象
+     * @param lgCharacter 查询实体
      * @return 所有数据
      */
     @GetMapping
-    public R selectAll(Page<LgUser> page, LgUser lgUser) {
-        return success(this.lgUserService.page(page, new QueryWrapper<>(lgUser)));
+    public R selectAll(Page<LgCharacter> page, LgCharacter lgCharacter) {
+        return success(this.lgCharacterService.page(page, new QueryWrapper<>(lgCharacter)));
     }
 
     /**
@@ -54,30 +51,29 @@ public class LgUserController extends ApiController {
      */
     @GetMapping("{id}")
     public R selectOne(@PathVariable Serializable id) {
-        return success(this.lgUserService.getById(id));
+        return success(this.lgCharacterService.getById(id));
     }
 
     /**
      * 新增数据
      *
-     * @param lgUser 实体对象
+     * @param createCharacterDto 实体对象
      * @return 新增结果
      */
-    @Operation(summary = "玩家注冊",description = "会自动生成唯一ID")
     @PostMapping
-    public R register(@RequestBody LgUser lgUser) {
-        return success(this.lgUserService.register(lgUser));
+    public void createCharacter(@RequestBody CreateCharacterDto createCharacterDto) {
+        this.lgCharacterService.createCharacter(createCharacterDto);
     }
 
     /**
      * 修改数据
      *
-     * @param lgUser 实体对象
+     * @param lgCharacter 实体对象
      * @return 修改结果
      */
     @PutMapping
-    public R update(@RequestBody LgUser lgUser) {
-        return success(this.lgUserService.updateById(lgUser));
+    public R update(@RequestBody LgCharacter lgCharacter) {
+        return success(this.lgCharacterService.updateById(lgCharacter));
     }
 
     /**
@@ -88,6 +84,6 @@ public class LgUserController extends ApiController {
      */
     @DeleteMapping
     public R delete(@RequestParam("idList") List<Long> idList) {
-        return success(this.lgUserService.removeByIds(idList));
+        return success(this.lgCharacterService.removeByIds(idList));
     }
 }

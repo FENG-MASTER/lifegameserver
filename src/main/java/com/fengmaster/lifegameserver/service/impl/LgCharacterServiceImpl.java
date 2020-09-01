@@ -2,6 +2,7 @@ package com.fengmaster.lifegameserver.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.dao.LgCharacterDao;
+import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
 import com.fengmaster.lifegameserver.model.po.LgCharacter;
 import com.fengmaster.lifegameserver.service.LgCharacterService;
 import org.springframework.stereotype.Service;
@@ -15,4 +16,8 @@ import org.springframework.stereotype.Service;
 @Service("lgCharacterService")
 public class LgCharacterServiceImpl extends ServiceImpl<LgCharacterDao, LgCharacter> implements LgCharacterService {
 
+    @Override
+    public void createCharacter(CreateCharacterDto createCharacterDto) {
+
+    }
 }

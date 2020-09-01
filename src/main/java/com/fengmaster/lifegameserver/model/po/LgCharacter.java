@@ -1,6 +1,7 @@
 package com.fengmaster.lifegameserver.model.po;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
 
 import java.io.Serializable;
 
@@ -11,6 +12,7 @@ import java.io.Serializable;
  * @since 2020-08-31 10:44:21
  */
 @SuppressWarnings("serial")
+@Data
 public class LgCharacter extends Model<LgCharacter> {
 
     private String uuid;
@@ -30,70 +32,6 @@ public class LgCharacter extends Model<LgCharacter> {
     //所属用户UUID
     private String userUuid;
 
-
-    public String getUuid() {
-        return uuid;
-    }
-
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getTitle() {
-        return title;
-    }
-
-    public void setTitle(String title) {
-        this.title = title;
-    }
-
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
-    public Integer getLevel() {
-        return level;
-    }
-
-    public void setLevel(Integer level) {
-        this.level = level;
-    }
-
-    public Integer getXp() {
-        return xp;
-    }
-
-    public void setXp(Integer xp) {
-        this.xp = xp;
-    }
-
-    public Integer getLifePoint() {
-        return lifePoint;
-    }
-
-    public void setLifePoint(Integer lifePoint) {
-        this.lifePoint = lifePoint;
-    }
-
-    public String getUserUuid() {
-        return userUuid;
-    }
-
-    public void setUserUuid(String userUuid) {
-        this.userUuid = userUuid;
-    }
 
     /**
      * 获取主键值
