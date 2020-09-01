@@ -23,7 +23,7 @@ import java.util.List;
  */
 @Tag(name = "玩家角色接口")
 @RestController
-@RequestMapping("character")
+@RequestMapping("/api/character")
 public class CharacterController extends ApiController {
     /**
      * 服务对象

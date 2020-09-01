@@ -57,7 +57,7 @@ public class ShiroConfig {
         map.put("/swagger-resources/**", "anon");
         map.put("/swagger-resources", "anon");
         //登录
-        shiroFilterFactoryBean.setLoginUrl("/player/login");
+        shiroFilterFactoryBean.setLoginUrl("/api/player/login");
         //错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/error");
 
