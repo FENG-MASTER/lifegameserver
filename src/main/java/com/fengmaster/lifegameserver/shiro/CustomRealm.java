@@ -23,7 +23,7 @@ public class CustomRealm extends AuthorizingRealm {
         String name = (String) principalCollection.getPrimaryPrincipal();
         //根据用户名去数据库查询用户信息
         LgUser user = userService.getUserByUserName(name);
-
+        
         return new SimpleAuthorizationInfo();
     }
 

@@ -62,10 +62,9 @@ public class UserController extends ApiController {
 
     @Operation(summary = "登录",description = "登录")
     @PostMapping("/login")
-    public R login(@Parameter(description = "用户名") @RequestParam String userName,
+    public void login(@Parameter(description = "用户名") @RequestParam String userName,
                    @Parameter(description = "密码") @RequestParam String password){
         lgUserService.login(userName,password);
-        return success(true);
     }
 
     /**

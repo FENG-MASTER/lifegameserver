@@ -36,7 +36,7 @@ public class BaseResponse<T> {
     }
 
     public static  BaseResponse success(Object t){
-        return new BaseResponse().setData(new BaseResponseData(1, ListUtil.toList(t))).setCode(0);
+        return new BaseResponse().setData(t!=null?new BaseResponseData(1, ListUtil.toList(t)):null).setCode(0);
     }
 
     public static  BaseResponse error(String message,int code){

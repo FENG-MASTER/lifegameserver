@@ -32,6 +32,17 @@ public class CharacterController extends ApiController {
     private LgCharacterService lgCharacterService;
 
     /**
+     * 新增数据
+     *
+     * @param createCharacterDto 实体对象
+     * @return 新增结果
+     */
+    @PostMapping
+    public void createCharacter(@RequestBody CreateCharacterDto createCharacterDto) {
+        this.lgCharacterService.createCharacter(createCharacterDto);
+    }
+
+    /**
      * 分页查询所有数据
      *
      * @param page        分页对象
@@ -54,16 +65,7 @@ public class CharacterController extends ApiController {
         return success(this.lgCharacterService.getById(id));
     }
 
-    /**
-     * 新增数据
-     *
-     * @param createCharacterDto 实体对象
-     * @return 新增结果
-     */
-    @PostMapping
-    public void createCharacter(@RequestBody CreateCharacterDto createCharacterDto) {
-        this.lgCharacterService.createCharacter(createCharacterDto);
-    }
+
 
     /**
      * 修改数据

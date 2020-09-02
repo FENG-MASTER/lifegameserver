@@ -18,7 +18,6 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Data
-@TableName("LG_USER")
 @Accessors(chain  = true)
 public class LgUser extends Model<LgUser> {
 

@@ -1,7 +1,9 @@
 package com.fengmaster.lifegameserver.model.po;
 
+import com.baomidou.mybatisplus.annotation.TableName;
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
 
@@ -13,6 +15,7 @@ import java.io.Serializable;
  */
 @SuppressWarnings("serial")
 @Data
+@Accessors(chain  = true)
 public class LgCharacter extends Model<LgCharacter> {
 
     private String uuid;

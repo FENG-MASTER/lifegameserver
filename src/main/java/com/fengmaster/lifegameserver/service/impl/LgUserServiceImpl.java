@@ -4,6 +4,9 @@ import cn.hutool.core.lang.UUID;
 import cn.hutool.crypto.SecureUtil;
 import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
+import com.fengmaster.lifegameserver.common.BusinessException;
+import com.fengmaster.lifegameserver.common.util.CommonUtil;
+import com.fengmaster.lifegameserver.common.util.UserUtil;
 import com.fengmaster.lifegameserver.dao.LgUserDao;
 import com.fengmaster.lifegameserver.model.po.LgUser;
 import com.fengmaster.lifegameserver.service.LgUserService;
@@ -36,7 +39,7 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
     @Override
     public boolean register(@Valid LgUser lgUser){
         //生成UUID
-        lgUser.setUuid(UUID.randomUUID().toString(true));
+        lgUser.setUuid(CommonUtil.randomUUID());
         //sha256加密密码
         lgUser.setPassword(SecureUtil.sha256(lgUser.getPassword()));
         return save(lgUser);
@@ -50,10 +53,9 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
         try {
             //进行验证，这里可以捕获异常，然后返回对应信息
             subject.login(usernamePasswordToken);
+            UserUtil.setUserSession(getUserByUserName(userName));
         } catch (AuthenticationException e) {
-            e.printStackTrace();
-        } catch (AuthorizationException e) {
-            e.printStackTrace();
+            throw new BusinessException(-1,"登录帐号或者密码错误");
         }
     }
 
