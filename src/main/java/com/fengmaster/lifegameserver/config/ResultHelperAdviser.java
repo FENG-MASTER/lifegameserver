@@ -51,7 +51,12 @@ public class ResultHelperAdviser implements ResponseBodyAdvice<Object> {
                 return o;
             }
         }
-        return BaseResponse.success(o);
+        if (o==null){
+            //无任何异常就认为是成功
+            return BaseResponse.success("操作成功");
+        }else {
+            return BaseResponse.success(o);
+        }
     }
 
     private boolean isSwaggerV3DocRequest(Object o, ServerHttpRequest serverHttpRequest) {

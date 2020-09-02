@@ -48,7 +48,7 @@ public class ShiroConfig {
         map.put("/logout", "logout");
         //对所有用户认证
         map.put("/api/**", "authc");
-        map.put("/**", "anon");
+//        map.put("/**", "anon");
 
         map.put("/swagger-ui.html", "anon");
         map.put("/swagger-ui/**", "anon");

@@ -9,6 +9,7 @@ import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
 import com.fengmaster.lifegameserver.model.po.LgCharacter;
 import com.fengmaster.lifegameserver.service.LgCharacterService;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;

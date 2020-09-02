@@ -23,6 +23,9 @@ public class CustomRealm extends AuthorizingRealm {
         String name = (String) principalCollection.getPrimaryPrincipal();
         //根据用户名去数据库查询用户信息
         LgUser user = userService.getUserByUserName(name);
+        if (user==null){
+            return null;
+        }
         
         return new SimpleAuthorizationInfo();
     }
@@ -41,7 +44,7 @@ public class CustomRealm extends AuthorizingRealm {
             return null;
         } else {
             //这里验证authenticationToken和simpleAuthenticationInfo的信息
-            SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(name, user.getPassword().toString(), getName());
+            SimpleAuthenticationInfo simpleAuthenticationInfo = new SimpleAuthenticationInfo(name, user.getPassword(), getName());
             return simpleAuthenticationInfo;
         }
     }
