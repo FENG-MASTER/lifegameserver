@@ -16,6 +16,6 @@ public interface LgCharacterService extends IService<LgCharacter> {
      * 创建新的角色
      * @param createCharacterDto
      */
-    public void createCharacter(CreateCharacterDto createCharacterDto);
+    public void createCharacterAndWorld(CreateCharacterDto createCharacterDto);
 
 }

@@ -11,4 +11,11 @@ import com.fengmaster.lifegameserver.model.po.LgObjWorld;
  */
 public interface LgObjWorldService extends IService<LgObjWorld> {
 
+    /**
+     * 添加到世界
+     * @param objUuid
+     * @param worldUuid
+     */
+    public void addObj2World(String objUuid,String worldUuid);
+
 }

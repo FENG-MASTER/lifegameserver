@@ -9,12 +9,15 @@ import com.fengmaster.lifegameserver.common.util.CommonUtil;
 import com.fengmaster.lifegameserver.common.util.UserUtil;
 import com.fengmaster.lifegameserver.dao.LgUserDao;
 import com.fengmaster.lifegameserver.model.po.LgUser;
+import com.fengmaster.lifegameserver.model.po.LgWorld;
 import com.fengmaster.lifegameserver.service.LgUserService;
+import com.fengmaster.lifegameserver.service.LgWorldService;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.UsernamePasswordToken;
 import org.apache.shiro.authz.AuthorizationException;
 import org.apache.shiro.subject.Subject;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;
 import org.springframework.validation.annotation.Validated;
 
@@ -31,6 +34,8 @@ import javax.validation.constraints.NotNull;
 @Validated
 public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements LgUserService {
 
+    @Autowired
+    private LgWorldService worldService;
 
     /**
      * 玩家注冊
@@ -38,11 +43,16 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
      */
     @Override
     public boolean register(@Valid LgUser lgUser){
+        createUser(lgUser);
+        return true;
+    }
+
+    private void createUser(LgUser lgUser) {
         //生成UUID
         lgUser.setUuid(CommonUtil.randomUUID());
         //sha256加密密码
         lgUser.setPassword(SecureUtil.sha256(lgUser.getPassword()));
-        return save(lgUser);
+        save(lgUser);
     }
 
     @Override
@@ -63,6 +73,8 @@ public class LgUserServiceImpl extends ServiceImpl<LgUserDao, LgUser> implements
     public LgUser getUserByUserName(String userName) {
         return getOne(new QueryWrapper<>(new LgUser().setName(userName)));
     }
+
+
 
 
 }

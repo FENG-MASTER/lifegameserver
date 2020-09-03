@@ -36,4 +36,9 @@ public class LgPermissionServiceImpl implements LgPermissionService {
     public List<LgCharacterPermission> getAllCharacterPermissionByUserUuid(String userUuid) {
         return lgCharacterPermissionDao.getAllCharacterPermissionByUserUuid(userUuid);
     }
+
+    @Override
+    public void initCharacterPermission(String characterUuid) {
+
+    }
 }

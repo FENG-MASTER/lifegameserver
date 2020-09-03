@@ -1,6 +1,8 @@
 package com.fengmaster.lifegameserver.model.po;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 /**
  * 对象所处世界表(LgObjWorld)表实体类
@@ -9,27 +11,13 @@ import com.baomidou.mybatisplus.extension.activerecord.Model;
  * @since 2020-08-31 10:44:31
  */
 @SuppressWarnings("serial")
+@Data
+@Accessors(chain = true)
 public class LgObjWorld extends Model<LgObjWorld> {
 
     private String worldUuid;
 
     private String objUuid;
 
-
-    public String getWorldUuid() {
-        return worldUuid;
-    }
-
-    public void setWorldUuid(String worldUuid) {
-        this.worldUuid = worldUuid;
-    }
-
-    public String getObjUuid() {
-        return objUuid;
-    }
-
-    public void setObjUuid(String objUuid) {
-        this.objUuid = objUuid;
-    }
 
 }

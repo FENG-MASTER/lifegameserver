@@ -11,8 +11,6 @@ import com.fengmaster.lifegameserver.model.po.LgCharacter;
 import com.fengmaster.lifegameserver.service.LgCharacterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.shiro.authz.annotation.RequiresAuthentication;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -44,7 +42,7 @@ public class CharacterController extends ApiController {
     @PostMapping
     @Operation(summary = "新增玩家角色")
     public void createCharacter(@RequestBody CreateCharacterDto createCharacterDto) {
-        this.lgCharacterService.createCharacter(createCharacterDto);
+        this.lgCharacterService.createCharacterAndWorld(createCharacterDto);
     }
 
     /**

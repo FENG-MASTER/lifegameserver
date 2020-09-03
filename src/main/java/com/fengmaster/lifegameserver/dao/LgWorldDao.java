@@ -3,6 +3,7 @@ package com.fengmaster.lifegameserver.dao;
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
 import com.fengmaster.lifegameserver.model.po.LgWorld;
 import org.apache.ibatis.annotations.Mapper;
+import org.apache.ibatis.annotations.Param;
 
 /**
  * 游戏世界(LgWorld)表数据库访问层
@@ -13,4 +14,6 @@ import org.apache.ibatis.annotations.Mapper;
 @Mapper
 public interface LgWorldDao extends BaseMapper<LgWorld> {
 
+
+    public LgWorld getLastCreateWorldByCharacter(@Param("characterUuid") String characterUuid);
 }

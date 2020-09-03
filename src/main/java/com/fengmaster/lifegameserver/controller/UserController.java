@@ -45,8 +45,8 @@ public class UserController extends ApiController {
      */
     @Operation(summary = "玩家注冊",description = "会自动生成唯一ID")
     @PostMapping
-    public R register(@RequestBody LgUser lgUser) {
-        return success(this.lgUserService.register(lgUser));
+    public boolean register(@RequestBody LgUser lgUser) {
+        return this.lgUserService.register(lgUser);
     }
 
     /**

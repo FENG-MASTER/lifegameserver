@@ -1,8 +1,12 @@
 package com.fengmaster.lifegameserver.model.po;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
+import lombok.Data;
+import lombok.experimental.Accessors;
 
 import java.io.Serializable;
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 游戏世界(LgWorld)表实体类
@@ -11,48 +15,25 @@ import java.io.Serializable;
  * @since 2020-08-31 10:44:36
  */
 @SuppressWarnings("serial")
+@Data
+@Accessors(chain = true)
 public class LgWorld extends Model<LgWorld> {
 
     private String uuid;
     //世界名称
     private String name;
 
-    private String adminGamerList;
+    private String creatorCharacterUuid;
     //世界类型
     private String type;
 
+    private Date createTime;
 
-    public String getUuid() {
-        return uuid;
+    public static final class TYPE{
+        public static final String SINGLE="S";
+        public static final String  MULTI="M";
     }
 
-    public void setUuid(String uuid) {
-        this.uuid = uuid;
-    }
-
-    public String getName() {
-        return name;
-    }
-
-    public void setName(String name) {
-        this.name = name;
-    }
-
-    public String getAdminGamerList() {
-        return adminGamerList;
-    }
-
-    public void setAdminGamerList(String adminGamerList) {
-        this.adminGamerList = adminGamerList;
-    }
-
-    public String getType() {
-        return type;
-    }
-
-    public void setType(String type) {
-        this.type = type;
-    }
 
     /**
      * 获取主键值

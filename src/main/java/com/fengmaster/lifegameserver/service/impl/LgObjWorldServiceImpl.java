@@ -13,6 +13,10 @@ import org.springframework.stereotype.Service;
  * @since 2020-08-31 10:44:31
  */
 @Service("lgObjWorldService")
-public class LgObjWorldServiceImpl extends ServiceImpl<LgObjWorldDao, LgObjWorld> implements LgObjWorldService {
+class LgObjWorldServiceImpl extends ServiceImpl<LgObjWorldDao, LgObjWorld> implements LgObjWorldService {
 
+    @Override
+    public void addObj2World(String objUuid, String worldUuid) {
+        save(new LgObjWorld().setObjUuid(objUuid).setWorldUuid(worldUuid));
+    }
 }

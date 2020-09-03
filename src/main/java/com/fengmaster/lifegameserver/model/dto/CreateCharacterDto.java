@@ -15,4 +15,5 @@ public class CreateCharacterDto {
 
     private String introduction;
 
+
 }
