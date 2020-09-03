@@ -4,6 +4,7 @@ import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fengmaster.lifegameserver.common.BusinessException;
 import com.fengmaster.lifegameserver.common.JsonRaw;
 import com.fengmaster.lifegameserver.model.dto.BaseResponse;
+import org.apache.shiro.authz.UnauthorizedException;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
 import org.springframework.core.MethodParameter;
@@ -88,6 +89,12 @@ public class ResultHelperAdviser implements ResponseBodyAdvice<Object> {
     public BaseResponse exceptionHandler(Exception e){
         LOG.error("未知异常:", e);
         return BaseResponse.error(e.getMessage());
+    }
+
+    @ExceptionHandler(value = UnauthorizedException.class)
+    @ResponseBody
+    public BaseResponse unauthorizedExceptionHandler(Exception e){
+        return BaseResponse.error("你无权进行此操作");
     }
 
 }

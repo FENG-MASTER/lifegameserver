@@ -1,0 +1,15 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org/DTD Mapper 3.0//EN"
+        "http://mybatis.org/dtd/mybatis-3-mapper.dtd" >
+<mapper namespace="com.fengmaster.lifegameserver.dao.LgCharacterPermissionDao">
+
+
+    <select id="getAllCharacterPermissionByUserUuid"
+            resultType="com.fengmaster.lifegameserver.model.po.LgCharacterPermission">
+        select *
+        from LG_CHARACTER_PERMISSION as LCP
+                 left join LG_CHARACTER AS LC ON LC.UUID = LCP.CHARACTER_UUID
+                 left join LG_USER as LU ON LU.UUID = LC.USER_UUID
+        where LU.UUID=#{userUuid}
+    </select>
+</mapper>

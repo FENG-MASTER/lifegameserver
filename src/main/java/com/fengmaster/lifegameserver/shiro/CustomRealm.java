@@ -17,6 +17,7 @@ public class CustomRealm extends AuthorizingRealm {
     @Autowired
     private LgUserService userService;
 
+
     @Override
     protected AuthorizationInfo doGetAuthorizationInfo(PrincipalCollection principalCollection) {
         //获取登录用户名

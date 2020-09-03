@@ -15,7 +15,12 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-
+    @Bean
+    public DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator(){
+        DefaultAdvisorAutoProxyCreator advisorAutoProxyCreator = new DefaultAdvisorAutoProxyCreator();
+        advisorAutoProxyCreator.setProxyTargetClass(true);
+        return advisorAutoProxyCreator;
+    }
 
     //将自己的验证方式加入容器
     @Bean

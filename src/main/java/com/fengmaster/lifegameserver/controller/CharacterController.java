@@ -9,7 +9,10 @@ import com.fengmaster.lifegameserver.common.util.UserUtil;
 import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
 import com.fengmaster.lifegameserver.model.po.LgCharacter;
 import com.fengmaster.lifegameserver.service.LgCharacterService;
+import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.apache.shiro.authz.annotation.RequiresAuthentication;
+import org.apache.shiro.authz.annotation.RequiresPermissions;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -39,6 +42,7 @@ public class CharacterController extends ApiController {
      * @return 新增结果
      */
     @PostMapping
+    @Operation(summary = "新增玩家角色")
     public void createCharacter(@RequestBody CreateCharacterDto createCharacterDto) {
         this.lgCharacterService.createCharacter(createCharacterDto);
     }
@@ -50,6 +54,7 @@ public class CharacterController extends ApiController {
      * @return 所有数据
      */
     @GetMapping
+    @Operation(summary = "查询玩家所有角色（分页)")
     public Page<LgCharacter> selectAll(Page<LgCharacter> page) {
         return this.lgCharacterService.page(page, new QueryWrapper<>(new LgCharacter().setUserUuid(UserUtil.getCurrentUser().getUuid())));
     }
