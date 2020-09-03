@@ -10,6 +10,7 @@ import com.fengmaster.lifegameserver.service.LgUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;
 import io.swagger.v3.oas.annotations.tags.Tag;
+import org.springframework.util.Assert;
 import org.springframework.validation.BindingResult;
 import org.springframework.validation.ObjectError;
 import org.springframework.web.bind.annotation.*;
@@ -61,9 +62,11 @@ public class UserController extends ApiController {
     }
 
     @Operation(summary = "登录",description = "登录")
-    @PostMapping("/login")
-    public void login(@Parameter(description = "用户名") @RequestParam String userName,
-                   @Parameter(description = "密码") @RequestParam String password){
+    @RequestMapping("login")
+    public void login(@Parameter(description = "用户名") @RequestParam(required = false) String userName,
+                   @Parameter(description = "密码") @RequestParam(required = false) String password){
+        Assert.notNull(userName,"请登录");
+        Assert.notNull(password,"请登录");
         lgUserService.login(userName,password);
     }
 

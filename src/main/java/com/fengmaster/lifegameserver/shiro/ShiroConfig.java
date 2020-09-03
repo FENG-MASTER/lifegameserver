@@ -15,13 +15,7 @@ import java.util.Map;
 @Configuration
 public class ShiroConfig {
 
-    @Bean
-    @ConditionalOnMissingBean
-    public DefaultAdvisorAutoProxyCreator defaultAdvisorAutoProxyCreator() {
-        DefaultAdvisorAutoProxyCreator defaultAAP = new DefaultAdvisorAutoProxyCreator();
-        defaultAAP.setProxyTargetClass(true);
-        return defaultAAP;
-    }
+
 
     //将自己的验证方式加入容器
     @Bean
@@ -48,7 +42,7 @@ public class ShiroConfig {
         map.put("/logout", "logout");
         //对所有用户认证
         map.put("/api/**", "authc");
-//        map.put("/**", "anon");
+//        map.put("/**", "authc");
 
         map.put("/swagger-ui.html", "anon");
         map.put("/swagger-ui/**", "anon");
@@ -58,6 +52,7 @@ public class ShiroConfig {
         map.put("/swagger-resources", "anon");
         //登录
         shiroFilterFactoryBean.setLoginUrl("/api/player/login");
+        shiroFilterFactoryBean.setSuccessUrl("/index");
         //错误页面，认证不通过跳转
         shiroFilterFactoryBean.setUnauthorizedUrl("/error");
 

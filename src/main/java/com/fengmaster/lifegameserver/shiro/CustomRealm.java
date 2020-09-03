@@ -26,9 +26,10 @@ public class CustomRealm extends AuthorizingRealm {
         if (user==null){
             return null;
         }
-        
+
         return new SimpleAuthorizationInfo();
     }
+
 
     @Override
     protected AuthenticationInfo doGetAuthenticationInfo(AuthenticationToken authenticationToken) throws AuthenticationException {
@@ -48,4 +49,6 @@ public class CustomRealm extends AuthorizingRealm {
             return simpleAuthenticationInfo;
         }
     }
+
+
 }

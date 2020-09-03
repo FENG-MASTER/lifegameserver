@@ -53,7 +53,7 @@ public class ResultHelperAdviser implements ResponseBodyAdvice<Object> {
         }
         if (o==null){
             //无任何异常就认为是成功
-            return BaseResponse.success("操作成功");
+            return BaseResponse.successWithMsg("操作成功");
         }else {
             return BaseResponse.success(o);
         }
