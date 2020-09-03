@@ -51,6 +51,11 @@ public class ResultHelperAdviser implements ResponseBodyAdvice<Object> {
                 return o;
             }
         }
+        if (o instanceof Page){
+            //分页信息;
+            return BaseResponse.page((Page) o);
+        }
+
         if (o==null){
             //无任何异常就认为是成功
             return BaseResponse.successWithMsg("操作成功");

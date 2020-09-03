@@ -28,7 +28,7 @@ import java.util.List;
  */
 @Tag(name = "玩家接口")
 @RestController
-@RequestMapping("/api/player")
+@RequestMapping("/api/v1/player")
 public class UserController extends ApiController {
     /**
      * 服务对象

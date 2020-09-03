@@ -5,12 +5,11 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
+import com.fengmaster.lifegameserver.common.util.UserUtil;
 import com.fengmaster.lifegameserver.model.dto.CreateCharacterDto;
 import com.fengmaster.lifegameserver.model.po.LgCharacter;
 import com.fengmaster.lifegameserver.service.LgCharacterService;
 import io.swagger.v3.oas.annotations.tags.Tag;
-import org.apache.shiro.authz.annotation.RequiresPermissions;
-import org.apache.shiro.authz.annotation.RequiresUser;
 import org.springframework.web.bind.annotation.*;
 
 import javax.annotation.Resource;
@@ -25,7 +24,7 @@ import java.util.List;
  */
 @Tag(name = "玩家角色接口")
 @RestController
-@RequestMapping("/api/character")
+@RequestMapping("/api/v1/character")
 public class CharacterController extends ApiController {
     /**
      * 服务对象
@@ -34,7 +33,7 @@ public class CharacterController extends ApiController {
     private LgCharacterService lgCharacterService;
 
     /**
-     * 新增数据
+     * 新增角色
      *
      * @param createCharacterDto 实体对象
      * @return 新增结果
@@ -45,15 +44,14 @@ public class CharacterController extends ApiController {
     }
 
     /**
-     * 分页查询所有数据
+     * 分页查询玩家所有角色
      *
      * @param page        分页对象
-     * @param lgCharacter 查询实体
      * @return 所有数据
      */
     @GetMapping
-    public R selectAll(Page<LgCharacter> page, LgCharacter lgCharacter) {
-        return success(this.lgCharacterService.page(page, new QueryWrapper<>(lgCharacter)));
+    public Page<LgCharacter> selectAll(Page<LgCharacter> page) {
+        return this.lgCharacterService.page(page, new QueryWrapper<>(new LgCharacter().setUserUuid(UserUtil.getCurrentUser().getUuid())));
     }
 
     /**

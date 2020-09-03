@@ -1,6 +1,7 @@
 package com.fengmaster.lifegameserver.model.dto;
 
 import cn.hutool.core.collection.ListUtil;
+import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import lombok.Data;
 import lombok.experimental.Accessors;
 
@@ -29,7 +30,11 @@ public class BaseResponse<T> {
             this.list = list;
         }
 
+        public BaseResponseData() {
+        }
+
         private long count;
+        private long total;
 
         private List<T> list;
 
@@ -53,5 +58,9 @@ public class BaseResponse<T> {
 
     public static  BaseResponse error(String message){
         return new BaseResponse().setMessage(message).setCode(-1);
+    }
+
+    public static BaseResponse page(Page page){
+        return new BaseResponse().setCode(0).setData(new BaseResponseData().setTotal(page.getTotal()).setCount(page.getRecords()==null?0:page.getRecords().size()).setList(page.getRecords()));
     }
 }
