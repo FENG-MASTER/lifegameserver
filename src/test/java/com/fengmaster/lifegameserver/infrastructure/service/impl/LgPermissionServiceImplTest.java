@@ -1,15 +1,12 @@
-package com.fengmaster.lifegameserver.service.impl;
+package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
-import com.fengmaster.lifegameserver.model.po.LgCharacterPermission;
-import com.fengmaster.lifegameserver.model.po.LgUserPermission;
+import com.fengmaster.lifegameserver.domain.model.LgCharacterPermission;
+import com.fengmaster.lifegameserver.domain.model.LgUserPermission;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;
-import org.springframework.util.Assert;
 
 import java.util.List;
-
-import static org.junit.jupiter.api.Assertions.*;
 
 @SpringBootTest
 class LgPermissionServiceImplTest {

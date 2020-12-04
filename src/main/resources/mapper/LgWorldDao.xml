@@ -1,9 +1,9 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
-<mapper namespace="com.fengmaster.lifegameserver.dao.LgWorldDao">
+<mapper namespace="com.fengmaster.lifegameserver.infrastructure.mapper.LgWorldDao">
 
 
-    <select id="getLastCreateWorldByCharacter" resultType="com.fengmaster.lifegameserver.model.po.LgWorld">
+    <select id="getLastCreateWorldByCharacter" resultType="com.fengmaster.lifegameserver.domain.model.LgWorld">
         select * from LG_WORLD where CREATOR_CHARACTER_UUID=#{characterUuid}
         and CREATE_TIME = (select max(LG_WORLD.CREATE_TIME)
                            from LG_WORLD
