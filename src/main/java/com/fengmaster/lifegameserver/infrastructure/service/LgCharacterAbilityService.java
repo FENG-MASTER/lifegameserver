@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgCharacterAbility;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacterAbility;
 
 /**
  * 角色能力(LgCharacterAbility)表服务接口

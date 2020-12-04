@@ -1,6 +1,6 @@
 package com.fengmaster.lifegameserver.infrastructure.common.util;
 
-import com.fengmaster.lifegameserver.domain.model.LgUser;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUser;
 import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.session.Session;
 import org.apache.shiro.subject.Subject;

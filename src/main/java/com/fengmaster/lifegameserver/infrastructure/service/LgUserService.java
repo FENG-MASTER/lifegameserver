@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgUser;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUser;
 
 import javax.validation.Valid;
 

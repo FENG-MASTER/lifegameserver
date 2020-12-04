@@ -1,6 +1,6 @@
 package com.fengmaster.lifegameserver.infrastructure.shiro;
 
-import com.fengmaster.lifegameserver.domain.model.LgUser;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUser;
 import com.fengmaster.lifegameserver.infrastructure.service.LgUserService;
 import org.apache.shiro.authc.AuthenticationException;
 import org.apache.shiro.authc.AuthenticationInfo;

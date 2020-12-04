@@ -1,4 +1,4 @@
-package com.fengmaster.lifegameserver.domain.model;
+package com.fengmaster.lifegameserver.domain.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
@@ -6,21 +6,21 @@ import java.io.Serializable;
 import java.util.Date;
 
 /**
- * 成就(LgAchievement)表实体类
+ * 能力(LgAbility)表实体类
  *
  * @author makejava
- * @since 2020-08-31 10:44:21
+ * @since 2020-08-31 10:44:14
  */
 @SuppressWarnings("serial")
-public class LgAchievement extends Model<LgAchievement> {
+public class LgAbility extends Model<LgAbility> {
 
     private String uuid;
-
+    //能力名称
     private String name;
-
-    private String introduction;
-
+    //能力所属种类
     private String typeListUuid;
+    //能力简介
+    private String introduction;
 
     private Date createTime;
 
@@ -41,20 +41,20 @@ public class LgAchievement extends Model<LgAchievement> {
         this.name = name;
     }
 
-    public String getIntroduction() {
-        return introduction;
-    }
-
-    public void setIntroduction(String introduction) {
-        this.introduction = introduction;
-    }
-
     public String getTypeListUuid() {
         return typeListUuid;
     }
 
     public void setTypeListUuid(String typeListUuid) {
         this.typeListUuid = typeListUuid;
+    }
+
+    public String getIntroduction() {
+        return introduction;
+    }
+
+    public void setIntroduction(String introduction) {
+        this.introduction = introduction;
     }
 
     public Date getCreateTime() {

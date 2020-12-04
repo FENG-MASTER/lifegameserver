@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
-import com.fengmaster.lifegameserver.domain.model.LgCharacterPermission;
-import com.fengmaster.lifegameserver.domain.model.LgUserPermission;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacterPermission;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUserPermission;
 
 import java.util.List;
 

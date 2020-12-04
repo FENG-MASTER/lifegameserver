@@ -2,7 +2,7 @@ package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgAchievementDao;
-import com.fengmaster.lifegameserver.domain.model.LgAchievement;
+import com.fengmaster.lifegameserver.domain.model.entity.LgAchievement;
 import com.fengmaster.lifegameserver.infrastructure.service.LgAchievementService;
 import org.springframework.stereotype.Service;
 

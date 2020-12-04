@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgTriggerCondition;
+import com.fengmaster.lifegameserver.domain.model.entity.LgTriggerCondition;
 
 /**
  * 触发器条件(LgTriggerCondition)表服务接口

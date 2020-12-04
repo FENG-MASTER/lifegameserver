@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgTrigger;
+import com.fengmaster.lifegameserver.domain.model.entity.LgTrigger;
 
 /**
  * 触发器(LgTrigger)表服务接口

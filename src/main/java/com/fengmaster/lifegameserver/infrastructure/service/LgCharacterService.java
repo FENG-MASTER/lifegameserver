@@ -2,7 +2,7 @@ package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
 import com.fengmaster.lifegameserver.interfaces.model.CreateCharacterDto;
-import com.fengmaster.lifegameserver.domain.model.LgCharacter;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacter;
 
 /**
  * 玩家(LgCharacter)表服务接口

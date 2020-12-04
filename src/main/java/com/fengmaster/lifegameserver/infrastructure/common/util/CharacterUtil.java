@@ -1,6 +1,6 @@
 package com.fengmaster.lifegameserver.infrastructure.common.util;
 
-import com.fengmaster.lifegameserver.domain.model.LgCharacter;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacter;
 
 public class CharacterUtil {
 

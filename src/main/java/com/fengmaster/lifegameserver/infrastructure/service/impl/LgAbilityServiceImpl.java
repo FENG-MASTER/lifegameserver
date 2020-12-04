@@ -2,7 +2,7 @@ package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgAbilityDao;
-import com.fengmaster.lifegameserver.domain.model.LgAbility;
+import com.fengmaster.lifegameserver.domain.model.entity.LgAbility;
 import com.fengmaster.lifegameserver.infrastructure.service.LgAbilityService;
 import org.springframework.stereotype.Service;
 

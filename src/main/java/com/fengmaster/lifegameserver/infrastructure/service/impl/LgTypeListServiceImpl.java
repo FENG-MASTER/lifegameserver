@@ -2,7 +2,7 @@ package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgTypeListDao;
-import com.fengmaster.lifegameserver.domain.model.LgTypeList;
+import com.fengmaster.lifegameserver.domain.model.entity.LgTypeList;
 import com.fengmaster.lifegameserver.infrastructure.service.LgTypeListService;
 import org.springframework.stereotype.Service;
 

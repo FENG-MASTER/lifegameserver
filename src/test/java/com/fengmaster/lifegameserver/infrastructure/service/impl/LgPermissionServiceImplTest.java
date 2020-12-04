@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
-import com.fengmaster.lifegameserver.domain.model.LgCharacterPermission;
-import com.fengmaster.lifegameserver.domain.model.LgUserPermission;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacterPermission;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUserPermission;
 import org.junit.jupiter.api.Test;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.boot.test.context.SpringBootTest;

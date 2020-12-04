@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgItem;
+import com.fengmaster.lifegameserver.domain.model.entity.LgItem;
 
 /**
  * 商店物品(LgItem)表服务接口

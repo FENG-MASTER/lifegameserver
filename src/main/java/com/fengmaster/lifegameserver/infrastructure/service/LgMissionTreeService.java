@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgMissionTree;
+import com.fengmaster.lifegameserver.domain.model.entity.LgMissionTree;
 
 /**
  * 任务树(LgMissionTree)表服务接口

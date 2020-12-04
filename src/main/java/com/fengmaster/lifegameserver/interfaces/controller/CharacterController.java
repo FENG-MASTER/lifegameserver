@@ -7,7 +7,7 @@ import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
 import com.fengmaster.lifegameserver.infrastructure.common.util.UserUtil;
 import com.fengmaster.lifegameserver.interfaces.model.CreateCharacterDto;
-import com.fengmaster.lifegameserver.domain.model.LgCharacter;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacter;
 import com.fengmaster.lifegameserver.infrastructure.service.LgCharacterService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.tags.Tag;

@@ -5,7 +5,7 @@ import com.baomidou.mybatisplus.core.conditions.query.QueryWrapper;
 import com.baomidou.mybatisplus.extension.api.ApiController;
 import com.baomidou.mybatisplus.extension.api.R;
 import com.baomidou.mybatisplus.extension.plugins.pagination.Page;
-import com.fengmaster.lifegameserver.domain.model.LgUser;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUser;
 import com.fengmaster.lifegameserver.infrastructure.service.LgUserService;
 import io.swagger.v3.oas.annotations.Operation;
 import io.swagger.v3.oas.annotations.Parameter;

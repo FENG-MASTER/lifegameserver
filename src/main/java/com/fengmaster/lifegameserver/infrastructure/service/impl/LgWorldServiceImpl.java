@@ -3,7 +3,7 @@ package com.fengmaster.lifegameserver.infrastructure.service.impl;
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.infrastructure.common.util.CommonUtil;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgWorldDao;
-import com.fengmaster.lifegameserver.domain.model.LgWorld;
+import com.fengmaster.lifegameserver.domain.model.entity.LgWorld;
 import com.fengmaster.lifegameserver.infrastructure.service.LgWorldService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Service;

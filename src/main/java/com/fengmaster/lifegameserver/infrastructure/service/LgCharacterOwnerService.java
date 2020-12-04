@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgCharacterOwner;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacterOwner;
 
 /**
  * 玩家拥有的对象(LgCharacterOwner)表服务接口

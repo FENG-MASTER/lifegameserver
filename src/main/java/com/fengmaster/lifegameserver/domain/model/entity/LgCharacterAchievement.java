@@ -1,32 +1,30 @@
-package com.fengmaster.lifegameserver.domain.model;
+package com.fengmaster.lifegameserver.domain.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 import java.io.Serializable;
+import java.util.Date;
 
 /**
- * 商店物品(LgItem)表实体类
+ * 玩家成就(LgCharacterAchievement)表实体类
  *
  * @author makejava
- * @since 2020-08-31 10:44:27
+ * @since 2020-08-31 10:44:24
  */
 @SuppressWarnings("serial")
-public class LgItem extends Model<LgItem> {
+public class LgCharacterAchievement extends Model<LgCharacterAchievement> {
 
     private String uuid;
-    //物品名称
+
     private String name;
-    //物品种类列表UUID
+    //成就原UUID
+    private String achievementUuid;
+
     private String typeListUuid;
-    //详细描述信息
 
     private String introduction;
-    //物品价格
-    private Integer price;
-    //剩余数量
-    private Integer quantity;
-    //是否消耗品
-    private Object expendable;
+    //获得时间
+    private Date gainTime;
 
 
     public String getUuid() {
@@ -45,6 +43,14 @@ public class LgItem extends Model<LgItem> {
         this.name = name;
     }
 
+    public String getAchievementUuid() {
+        return achievementUuid;
+    }
+
+    public void setAchievementUuid(String achievementUuid) {
+        this.achievementUuid = achievementUuid;
+    }
+
     public String getTypeListUuid() {
         return typeListUuid;
     }
@@ -61,28 +67,12 @@ public class LgItem extends Model<LgItem> {
         this.introduction = introduction;
     }
 
-    public Integer getPrice() {
-        return price;
+    public Date getGainTime() {
+        return gainTime;
     }
 
-    public void setPrice(Integer price) {
-        this.price = price;
-    }
-
-    public Integer getQuantity() {
-        return quantity;
-    }
-
-    public void setQuantity(Integer quantity) {
-        this.quantity = quantity;
-    }
-
-    public Object getExpendable() {
-        return expendable;
-    }
-
-    public void setExpendable(Object expendable) {
-        this.expendable = expendable;
+    public void setGainTime(Date gainTime) {
+        this.gainTime = gainTime;
     }
 
     /**

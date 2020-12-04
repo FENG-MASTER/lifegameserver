@@ -2,7 +2,7 @@ package com.fengmaster.lifegameserver.infrastructure.service.impl;
 
 import com.baomidou.mybatisplus.extension.service.impl.ServiceImpl;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgTriggerConditionDao;
-import com.fengmaster.lifegameserver.domain.model.LgTriggerCondition;
+import com.fengmaster.lifegameserver.domain.model.entity.LgTriggerCondition;
 import com.fengmaster.lifegameserver.infrastructure.service.LgTriggerConditionService;
 import org.springframework.stereotype.Service;
 

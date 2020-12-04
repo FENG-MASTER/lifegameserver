@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.service;
 
 import com.baomidou.mybatisplus.extension.service.IService;
-import com.fengmaster.lifegameserver.domain.model.LgAchievement;
+import com.fengmaster.lifegameserver.domain.model.entity.LgAchievement;
 
 /**
  * 成就(LgAchievement)表服务接口

@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fengmaster.lifegameserver.domain.model.LgCharacterOwner;
+import com.fengmaster.lifegameserver.domain.model.entity.LgCharacterOwner;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

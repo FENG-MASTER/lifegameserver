@@ -7,7 +7,7 @@ import com.fengmaster.lifegameserver.infrastructure.common.BusinessException;
 import com.fengmaster.lifegameserver.infrastructure.common.util.CommonUtil;
 import com.fengmaster.lifegameserver.infrastructure.common.util.UserUtil;
 import com.fengmaster.lifegameserver.infrastructure.mapper.LgUserDao;
-import com.fengmaster.lifegameserver.domain.model.LgUser;
+import com.fengmaster.lifegameserver.domain.model.entity.LgUser;
 import com.fengmaster.lifegameserver.infrastructure.service.LgUserService;
 import com.fengmaster.lifegameserver.infrastructure.service.LgWorldService;
 import org.apache.shiro.SecurityUtils;

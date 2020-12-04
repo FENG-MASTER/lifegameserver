@@ -1,4 +1,4 @@
-package com.fengmaster.lifegameserver.domain.model;
+package com.fengmaster.lifegameserver.domain.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 import lombok.Data;

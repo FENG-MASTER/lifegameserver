@@ -1,30 +1,32 @@
-package com.fengmaster.lifegameserver.domain.model;
+package com.fengmaster.lifegameserver.domain.model.entity;
 
 import com.baomidou.mybatisplus.extension.activerecord.Model;
 
 import java.io.Serializable;
-import java.util.Date;
 
 /**
- * 玩家成就(LgCharacterAchievement)表实体类
+ * 商店物品(LgItem)表实体类
  *
  * @author makejava
- * @since 2020-08-31 10:44:24
+ * @since 2020-08-31 10:44:27
  */
 @SuppressWarnings("serial")
-public class LgCharacterAchievement extends Model<LgCharacterAchievement> {
+public class LgItem extends Model<LgItem> {
 
     private String uuid;
-
+    //物品名称
     private String name;
-    //成就原UUID
-    private String achievementUuid;
-
+    //物品种类列表UUID
     private String typeListUuid;
+    //详细描述信息
 
     private String introduction;
-    //获得时间
-    private Date gainTime;
+    //物品价格
+    private Integer price;
+    //剩余数量
+    private Integer quantity;
+    //是否消耗品
+    private Object expendable;
 
 
     public String getUuid() {
@@ -43,14 +45,6 @@ public class LgCharacterAchievement extends Model<LgCharacterAchievement> {
         this.name = name;
     }
 
-    public String getAchievementUuid() {
-        return achievementUuid;
-    }
-
-    public void setAchievementUuid(String achievementUuid) {
-        this.achievementUuid = achievementUuid;
-    }
-
     public String getTypeListUuid() {
         return typeListUuid;
     }
@@ -67,12 +61,28 @@ public class LgCharacterAchievement extends Model<LgCharacterAchievement> {
         this.introduction = introduction;
     }
 
-    public Date getGainTime() {
-        return gainTime;
+    public Integer getPrice() {
+        return price;
     }
 
-    public void setGainTime(Date gainTime) {
-        this.gainTime = gainTime;
+    public void setPrice(Integer price) {
+        this.price = price;
+    }
+
+    public Integer getQuantity() {
+        return quantity;
+    }
+
+    public void setQuantity(Integer quantity) {
+        this.quantity = quantity;
+    }
+
+    public Object getExpendable() {
+        return expendable;
+    }
+
+    public void setExpendable(Object expendable) {
+        this.expendable = expendable;
     }
 
     /**

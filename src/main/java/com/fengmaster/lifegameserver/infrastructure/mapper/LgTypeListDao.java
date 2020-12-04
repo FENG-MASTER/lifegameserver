@@ -1,7 +1,7 @@
 package com.fengmaster.lifegameserver.infrastructure.mapper;
 
 import com.baomidou.mybatisplus.core.mapper.BaseMapper;
-import com.fengmaster.lifegameserver.domain.model.LgTypeList;
+import com.fengmaster.lifegameserver.domain.model.entity.LgTypeList;
 import org.apache.ibatis.annotations.Mapper;
 
 /**

@@ -5,7 +5,7 @@
 
 
     <select id="getAllCharacterPermissionByUserUuid"
-            resultType="com.fengmaster.lifegameserver.domain.model.LgCharacterPermission">
+            resultType="com.fengmaster.lifegameserver.domain.model.entity.LgCharacterPermission">
         select *
         from LG_CHARACTER_PERMISSION as LCP
                  left join LG_CHARACTER AS LC ON LC.UUID = LCP.CHARACTER_UUID
